@@ -70,7 +70,7 @@ public class JdbcTest {
         // 多态 : 左面是接口类型, 右面是实际的子类
         java.sql.Driver driver = new com.mysql.cj.jdbc.Driver();
         //bin\mysql --host=127.0.0.1 --port=3306 --user=root --password=123456 world
-        String url = "jdbc:mysql://127.0.0.1:3306/jdbc";
+        String url = "jdbc:mysql://127.0.0.1:3306/day05";
         // 用一个Map集合, 保存好用户名和密码的配置
         Properties properties = new Properties();
         properties.setProperty("user", "root");

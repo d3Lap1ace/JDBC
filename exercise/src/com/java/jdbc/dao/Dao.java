@@ -1,9 +1,6 @@
 package com.java.jdbc.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * @classname JDBC
@@ -28,6 +25,13 @@ public class Dao {
 
         //执行查询
         resultSet = preparedStatement.executeQuery();
+
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        int columnCount = metaData.getColumnCount();
+        for (int i = 0; i < columnCount; i++) {
+            String columnLabel = metaData.getColumnLabel(i + 1);
+            System.out.println(columnLabel+"\t");
+        }
 
     }
 }

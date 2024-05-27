@@ -26,7 +26,7 @@ public class ConnectionPoolTest {
     @Test
     public void test2() throws Exception {
         Properties properties = new Properties();// Map集合, 里面保存所有的配置信息
-        properties.load(new FileInputStream("druid.properties")); // 配置文件放在项目目录下
+        properties.load(new FileInputStream("./druid.properties")); // 配置文件放在项目目录下
         DataSource dataSource = DruidDataSourceFactory.createDataSource(properties);
         Connection connection = dataSource.getConnection();
         System.out.println(connection);
@@ -37,7 +37,7 @@ public class ConnectionPoolTest {
         DruidDataSource druidDataSource = new DruidDataSource();
 
         druidDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver"); // 驱动类
-        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/jdbc");
+        druidDataSource.setUrl("jdbc:mysql://127.0.0.1:3306/day05");
         druidDataSource.setUsername("root");
         druidDataSource.setPassword("123456");
 
